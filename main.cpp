@@ -6,26 +6,43 @@ using namespace std;
 const int MAX_NUM_OF_COURSES = 10; //Assuming the maximum number of courses will not exceed 10.
 
 struct course {
-    string id;
-    string name;
-    int crdtHrs; //credit hours
-    float mksObtained; //marks obtained for a course
+    /**
+     Structure for creating a course
+
+     Contains:
+       - Course name
+       - Course Id
+       - Course Credit Hours
+       - Marks Obtained
+    */
+
+    string name;           // Course name
+    string id;            // Course name
+    int crdtHrs;         //Credit hours
+    float mksObtained;  //Marks obtained for a course
 };
 
 struct student
 {
-    string first_name;
-    string last_name;
-    int age;
-    string id; //student id 
-    char level; //Level of the student 100 | 200 etc.
-    char semeseter; //Current semester
-    course crs_undertaken[MAX_NUM_OF_COURSES]; //courses 
+    /**
+        Structure for creating Students
+
+
+    */
+
+
+    string first_name;                                // Student firstname
+    string last_name;                                // Student lastname
+    int age;                                        // Student Age
+    string id;                                     // Student id
+    char level[3];                                // Level of the student 100 | 200 etc.
+    char semester[1];                            // Current semester
+    course crs_undertaken[MAX_NUM_OF_COURSES];  // Number of courses
 };
 
 void registerStudent(student& s)
 {
-    
+
 
     cout << "First Name: " << endl;
     cout << ">> ";
@@ -44,8 +61,9 @@ void registerStudent(student& s)
     cin >> s.level;
     cout << "Current Semester: " << endl;
     cout << ">> ";
-    cin >> s.semeseter;
-    
+    cin >> s.semester;
+
+
     for (int i = 0; i < MAX_NUM_OF_COURSES; i++)
     {
 
@@ -63,30 +81,14 @@ void registerStudent(student& s)
         cin >> s.crs_undertaken[i].mksObtained;
 
     }
-    
+
 }
 
 int main(int argc, char const *argv[])
 {
-    cout << "Hello world" << endl;
-    //Test 
+    cout << "STUDENT RECORD KEEPER" << endl;
+
     student s1;
-    s1.first_name = "Awesome";
-    s1.last_name = "Ken";
-    s1.age = 3;
-    s1.id = "STD00001";
-
-    cout << s1.first_name << endl;
-    cout << s1.last_name << endl;
-    cout << s1.age << endl;
-    cout << s1.id << endl;
-
-//Add course
-s1.crs_undertaken[0].id = "C001";
-s1.crs_undertaken[0].crdtHrs = 3;
-s1.crs_undertaken[0].name = "Computer Programming";
-s1.crs_undertaken[0].mksObtained = 88.6;
-
-registerStudent(s1);
+    registerStudent(s1);
     return 0;
 }
