@@ -107,15 +107,41 @@ void registerStudent(student& s)
         cin >> s.crs_undertaken[i].mksObtained;
 
     }
-
 }
 
 // The main program starts here
 int main(int argc, char const *argv[])
 {
-    cout << "STUDENT RECORD KEEPER" << endl;
+    cout << "********---STUDENT RECORD KEEPER---********\n"<< endl;
 
-    student s1;
-    registerStudent(s1);
+    int option;
+    do {
+
+        cout << "Choose an option to continue: \n"<<endl;
+        cout << "1. Login\n2. Register\n99. To exit\n"<<endl;
+        cout << "SYS>>> ";
+        cin >> option;
+
+
+        switch (option) {
+            case 1:
+            cout << "Login..."<<endl;
+            break;
+
+            case 2:
+
+            break;
+
+            default:
+                cout << "Choose from the options 1 or 2 or enter 99 to exit"<<endl;
+
+        }
+    }while (option != 99);
+
+
+    student stud;
+    registerStudent(stud);
+
     return 0;
+//
 }
