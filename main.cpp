@@ -1,3 +1,14 @@
+/**
+    CPP Community GH
+    First group project
+    STUDENT RECORD KEEPER
+
+    @file main.cpp
+    @author CPP_Comm_GH
+    @version 1.0.0 27/08/2020
+
+*/
+
 #include <iostream>
 #include <string>
 
@@ -27,7 +38,14 @@ struct student
     /**
         Structure for creating Students
 
-
+        Contains:
+          - Student firstname
+          - Lastname
+          - Age
+          - Identification number
+          - Current level
+          - Current Semester
+          - Courses
     */
 
 
@@ -40,9 +58,17 @@ struct student
     course crs_undertaken[MAX_NUM_OF_COURSES];  // Number of courses
 };
 
+
 void registerStudent(student& s)
 {
+    /**
+        Function to register new students
+        Function with no return type
 
+        @param student The new student to be created
+        @return void returns nothing
+
+    */
 
     cout << "First Name: " << endl;
     cout << ">> ";
@@ -84,6 +110,7 @@ void registerStudent(student& s)
 
 }
 
+// The main program starts here
 int main(int argc, char const *argv[])
 {
     cout << "STUDENT RECORD KEEPER" << endl;
